@@ -1,0 +1,23 @@
+{
+  "name":         "fernleafsystems/apiwrappers-ipstack",
+  "authors":      [
+    {
+      "name":     "Paul Goodchild",
+      "email":    "paul@paulgoodchild.me",
+      "homepage": "https://paulgoodchild.me"
+    }
+  ],
+  "repositories": [
+  ],
+  "require":      {
+    "ext-json":                         "*",
+    "fernleafsystems/apiwrappers-base": "^1.0"
+  },
+  "require-dev":  {
+  },
+  "autoload":     {
+    "psr-4": {
+      "FernleafSystems\\ApiWrappers\\IPStack\\": "src"
+    }
+  }
+}
