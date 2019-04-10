@@ -1,6 +1,6 @@
 <?php
 
-namespace FernleafSystems\ApiWrappers\IPStack\GeoIp;
+namespace FernleafSystems\ApiWrappers\GeoIP\IPStack\IP;
 
 /**
  * Class LocationVO
@@ -15,4 +15,5 @@ namespace FernleafSystems\ApiWrappers\IPStack\GeoIp;
  * @property array[] languages                  - [ code=>, name=>, native=> ]
  */
 class LocationVO extends \FernleafSystems\ApiWrappers\Base\BaseVO {
+
 }

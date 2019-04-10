@@ -1,12 +1,12 @@
 <?php
 
-namespace FernleafSystems\ApiWrappers\IPStack\GeoIp;
+namespace FernleafSystems\ApiWrappers\GeoIP\IPStack\IP;
 
-use FernleafSystems\ApiWrappers\IPStack;
+use FernleafSystems\ApiWrappers\GeoIP\IPStack;
 
 /**
  * Class Lookup
- * @package FernleafSystems\ApiWrappers\IPStack\GeoIp
+ * @package FernleafSystems\ApiWrappers\GeoIP\IPStack\IP
  */
 class Lookup extends IPStack\Api {
 

@@ -17,7 +17,7 @@
   },
   "autoload":     {
     "psr-4": {
-      "FernleafSystems\\ApiWrappers\\IPStack\\": "src"
+      "FernleafSystems\\ApiWrappers\\GeoIP\\": "src"
     }
   }
 }
