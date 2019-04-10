@@ -1,10 +1,10 @@
 <?php
 
-namespace FernleafSystems\ApiWrappers\IPStack;
+namespace FernleafSystems\ApiWrappers\GeoIP\IPStack;
 
 /**
  * Class Api
- * @package FernleafSystems\ApiWrappers\FreeAgent
+ * @package FernleafSystems\ApiWrappers\IPStack
  */
 class Api extends \FernleafSystems\ApiWrappers\Base\BaseApi {
 

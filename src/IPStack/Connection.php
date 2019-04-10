@@ -1,10 +1,10 @@
 <?php
 
-namespace FernleafSystems\ApiWrappers\IPStack;
+namespace FernleafSystems\ApiWrappers\GeoIP\IPStack;
 
 /**
  * Class Connection
- * @package FernleafSystems\ApiWrappers\Freeagent
+ * @package FernleafSystems\ApiWrappers\IPStack
  * @property bool $is_secure
  */
 class Connection extends \FernleafSystems\ApiWrappers\Base\Connection {

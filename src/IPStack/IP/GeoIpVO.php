@@ -1,6 +1,6 @@
 <?php
 
-namespace FernleafSystems\ApiWrappers\IPStack\GeoIp;
+namespace FernleafSystems\ApiWrappers\GeoIP\IPStack\IP;
 
 /**
  * Class GeoIpVO

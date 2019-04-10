@@ -1,5 +1,5 @@
 {
-  "name":         "fernleafsystems/apiwrappers-ipstack",
+  "name":         "fernleafsystems/apiwrappers-geoip",
   "authors":      [
     {
       "name":     "Paul Goodchild",
@@ -17,7 +17,7 @@
   },
   "autoload":     {
     "psr-4": {
-      "FernleafSystems\\ApiWrappers\\IPStack\\": "src"
+      "FernleafSystems\\ApiWrappers\\GeoIP\\": "src"
     }
   }
 }
