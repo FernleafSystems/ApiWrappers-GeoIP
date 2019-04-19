@@ -7,6 +7,25 @@ To get started, add the package to your project by issuing the following command
 
     composer require fernleafsystems/apiwrappers-ipstack
 
+## Redirect.li - Getting Started
+
+Very simple to use. As with all our API you define a Connection to the API first, then
+inject this into the various API components as you need.
+
+In this case:
+
+```php
+	use FernleafSystems\ApiWrappers\GeoIP\Redirectli;
+
+	$oConn = new Redirectli\Connection();
+	$oIpCountry = ( new Redirectli\Geo\Lookup() )
+			->setConnection( $oConn )
+			->me();
+```
+
+This will return an IpGeoVO object that contains all the information for
+your IP.
+
 ## GeoJS - Getting Started
 
 Very simple to use. As with all our API you define a Connection to the API first, then
@@ -29,6 +48,7 @@ instead of `GeoJS\Country\Lookup`
 
 You can look up single IPs or multiple IPs. And in this case you'll get back an
 array of VOs.
+
 ```php
 	use FernleafSystems\ApiWrappers\GeoIP\GeoJS;
 
