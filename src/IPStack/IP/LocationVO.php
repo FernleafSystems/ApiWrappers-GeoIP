@@ -3,8 +3,6 @@
 namespace FernleafSystems\ApiWrappers\GeoIP\IPStack\IP;
 
 /**
- * Class LocationVO
- * @package FernleafSystems\ApiWrappers\IPStack\GeoIp
  * @property string  geoname_id
  * @property string  capital                    - e.g. London
  * @property string  country_flag               - URL e.g. http://assets.ipstack.com/flags/gb.svg

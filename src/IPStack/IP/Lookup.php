@@ -5,29 +5,21 @@ namespace FernleafSystems\ApiWrappers\GeoIP\IPStack\IP;
 use FernleafSystems\ApiWrappers\GeoIP\IPStack;
 
 /**
- * Class Lookup
- * @package FernleafSystems\ApiWrappers\GeoIP\IPStack\IP
+ * @property string $lookup_ip
  */
 class Lookup extends IPStack\Api {
 
-	/**
-	 * @param string $sIP
-	 * @return GeoIpVO|null
-	 */
-	public function ip( $sIP ) {
-		$oIP = null;
-		$this->setParam( 'lookup_ip', $sIP )
-			 ->req();
+	public function ip( string $ip ) :?GeoIpVO {
+		$IP = null;
+		$this->lookup_ip = $ip;
+		$this->req();
 		if ( $this->isLastRequestSuccess() ) {
-			$oIP = $this->getVO()->applyFromArray( $this->getDecodedResponseBody() );
+			$IP = $this->getVO()->applyFromArray( $this->getDecodedResponseBody() );
 		}
-		return $oIP;
+		return $IP;
 	}
 
-	/**
-	 * @return GeoIpVO
-	 */
-	protected function getVO() {
+	protected function getVO() :GeoIpVO {
 		return new GeoIpVO();
 	}
 
@@ -37,16 +29,12 @@ class Lookup extends IPStack\Api {
 	protected function preSendVerification() {
 		parent::preSendVerification();
 
-		$sIp = $this->getParam( 'lookup_ip' );
-		if ( filter_var( $sIp, FILTER_VALIDATE_IP ) === false ) {
-			throw new \Exception( sprintf( 'The IP provided was not valid "%s"', $sIp ) );
+		if ( filter_var( $this->lookup_ip, FILTER_VALIDATE_IP ) === false ) {
+			throw new \Exception( sprintf( 'The IP provided was not valid "%s"', $this->lookup_ip ) );
 		}
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function getUrlEndpoint() {
-		return $this->getParam( 'lookup_ip' );
+	protected function getUrlEndpoint() :string {
+		return $this->lookup_ip;
 	}
 }

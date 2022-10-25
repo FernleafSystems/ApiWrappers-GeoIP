@@ -2,12 +2,10 @@
 
 namespace FernleafSystems\ApiWrappers\GeoIP\GeoJS\Geo;
 
-use FernleafSystems\ApiWrappers\Base\BaseVO;
+use FernleafSystems\ApiWrappers\GeoIP\GeoJS\Country\IpCountryVO;
 
 /**
- * Class GeoIpVO
  * @see     https://www.geojs.io/docs/v1/endpoints/geo/
- * @package FernleafSystems\ApiWrappers\GeoIP\GeoJS\Geo
  * @property string ip
  * @property string country             - e.g. US
  * @property string country_3           - e.g. USA
@@ -22,6 +20,6 @@ use FernleafSystems\ApiWrappers\Base\BaseVO;
  * @property string asn
  * @property string organization_name
  */
-class IpGeoVO extends BaseVO {
+class IpGeoVO extends IpCountryVO {
 
 }

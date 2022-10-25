@@ -3,8 +3,7 @@
 namespace FernleafSystems\ApiWrappers\GeoIP\Redirectli\Geo;
 
 /**
- * Class Lookup
- * @package FernleafSystems\ApiWrappers\GeoIP\GeoJS\Geo
+ * @property string $request_ip
  */
 class Lookup extends \FernleafSystems\ApiWrappers\GeoIP\Redirectli\Api {
 
@@ -16,32 +15,25 @@ class Lookup extends \FernleafSystems\ApiWrappers\GeoIP\Redirectli\Api {
 	}
 
 	/**
-	 * @param string $sIp
-	 * @return IpGeoVO|null
+	 * @param string $ip
 	 */
-	public function ip( $sIp ) {
-		$oIp = null;
-		if ( filter_var( $sIp, FILTER_VALIDATE_IP ) !== false ) {
-			$this->setParam( 'request_ip', $sIp );
+	public function ip( $ip ) :?IpGeoVO {
+		$IP = null;
+		if ( filter_var( $ip, FILTER_VALIDATE_IP ) !== false ) {
+			$this->request_ip = $ip;
 			if ( $this->req()->isLastRequestSuccess() ) {
-				$oIp = $this->getVO()->applyFromArray( $this->getDecodedResponseBody() );
+				$IP = $this->getVO()->applyFromArray( $this->getDecodedResponseBody() );
 			}
 		}
-		return $oIp;
+		return $IP;
 	}
 
-	/**
-	 * @return IpGeoVO
-	 */
-	protected function getVO() {
+	protected function getVO() :IpGeoVO {
 		return new IpGeoVO();
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function getUrlEndpoint() {
-		$sIp = $this->getParam( 'request_ip' );
-		return 'ip'.( empty( $sIp ) ? '' : '/'.$sIp );
+	protected function getUrlEndpoint() :string {
+		$ip = $this->request_ip;
+		return 'ip'.( empty( $ip ) ? '' : '/'.$ip );
 	}
 }
