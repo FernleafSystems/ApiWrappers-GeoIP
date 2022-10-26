@@ -5,9 +5,7 @@ namespace FernleafSystems\ApiWrappers\GeoIP\Redirectli\Geo;
 use FernleafSystems\ApiWrappers\Base\BaseVO;
 
 /**
- * Class GeoIpVO
  * @see     https://redirect.li/api/#api-Geo_IP
- * @package FernleafSystems\ApiWrappers\GeoIP\Redirectli\Geo
  * @property string ip
  * @property string ipType        - 4 or 6
  * @property string code          - unknown, private, Geoip

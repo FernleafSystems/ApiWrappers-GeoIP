@@ -4,23 +4,16 @@ namespace FernleafSystems\ApiWrappers\GeoIP\GeoJS\Country;
 
 use FernleafSystems\ApiWrappers\GeoIP\GeoJS;
 
-/**
- * Class Base
- * @package FernleafSystems\ApiWrappers\GeoIP\GeoJS\Country
- */
 class Base extends GeoJS\Api {
 
 	/**
 	 * @return IpCountryVO
 	 */
-	protected function getVO() {
+	protected function getVO() :IpCountryVO {
 		return new IpCountryVO();
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function getUrlEndpoint() {
+	protected function getUrlEndpoint() :string {
 		return 'ip/country.json';
 	}
 }

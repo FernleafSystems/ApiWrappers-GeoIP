@@ -3,8 +3,6 @@
 namespace FernleafSystems\ApiWrappers\GeoIP\IPStack\IP;
 
 /**
- * Class GeoIpVO
- * @package FernleafSystems\ApiWrappers\IPStack\GeoIp
  * @property string ip
  * @property string type           - ipv4
  * @property string continent_code - EU
@@ -21,10 +19,7 @@ namespace FernleafSystems\ApiWrappers\GeoIP\IPStack\IP;
  */
 class GeoIpVO extends \FernleafSystems\ApiWrappers\Base\BaseVO {
 
-	/**
-	 * @return LocationVO
-	 */
-	public function getLocationVO() {
+	public function getLocationVO() :LocationVO {
 		return ( new LocationVO() )->applyFromArray( $this->location );
 	}
 }

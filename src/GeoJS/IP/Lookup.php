@@ -4,28 +4,21 @@ namespace FernleafSystems\ApiWrappers\GeoIP\GeoJS\IP;
 
 use FernleafSystems\ApiWrappers\GeoIP\GeoJS;
 
-/**
- * Class Lookup
- * @package FernleafSystems\ApiWrappers\GeoIP\GeoJS\Country
- */
 class Lookup extends GeoJS\Api {
 
 	/**
 	 * @return string|null
 	 */
 	public function me() {
-		$sIP = null;
+		$ip = null;
 		if ( $this->req()->isLastRequestSuccess() ) {
-			$aResp = $this->getDecodedResponseBody();
-			$sIP = isset( $aResp[ 'ip' ] ) ? $aResp[ 'ip' ] : null;
+			$resp = $this->getDecodedResponseBody();
+			$ip = $resp[ 'ip' ] ?? null;
 		}
-		return $sIP;
+		return $ip;
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function getUrlEndpoint() {
+	protected function getUrlEndpoint() :string {
 		return 'ip.json';
 	}
 }
